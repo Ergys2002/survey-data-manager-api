@@ -1,19 +1,20 @@
 package com.sdm.surveydatamanagementapi.config;
 
-import com.example.surveydatamanager.dto.response.ErrorResponse;
-import com.example.surveydatamanager.exception.answer.NoAnswersForSurveyException;
-import com.example.surveydatamanager.exception.candidate.CandidateNotFoundException;
-import com.example.surveydatamanager.exception.candidate.ExistingCandidateByEmailException;
-import com.example.surveydatamanager.exception.candidate.ExistingCandidateByPhoneNumberException;
-import com.example.surveydatamanager.exception.candidate.NoCandidatesException;
-import com.example.surveydatamanager.exception.candidateSurvey.CandidateSurveyNotFoundException;
-import com.example.surveydatamanager.exception.question.InvalidQuestionException;
-import com.example.surveydatamanager.exception.question.NoQuestionsForSurveyException;
-import com.example.surveydatamanager.exception.question.NotAllQuestionsSavedException;
-import com.example.surveydatamanager.exception.question.QuestionNotFoundException;
-import com.example.surveydatamanager.exception.survey.NoSurveysException;
-import com.example.surveydatamanager.exception.survey.SurveyAlreadyTakenException;
-import com.example.surveydatamanager.exception.survey.SurveyNotFoundException;
+
+import com.sdm.surveydatamanagementapi.dto.response.ErrorResponse;
+import com.sdm.surveydatamanagementapi.exception.answer.NoAnswersForSurveyException;
+import com.sdm.surveydatamanagementapi.exception.candidate.CandidateNotFoundException;
+import com.sdm.surveydatamanagementapi.exception.candidate.ExistingCandidateByEmailException;
+import com.sdm.surveydatamanagementapi.exception.candidate.ExistingCandidateByPhoneNumberException;
+import com.sdm.surveydatamanagementapi.exception.candidate.NoCandidatesException;
+import com.sdm.surveydatamanagementapi.exception.candidateSurvey.CandidateSurveyNotFoundException;
+import com.sdm.surveydatamanagementapi.exception.question.InvalidQuestionException;
+import com.sdm.surveydatamanagementapi.exception.question.NoQuestionsForSurveyException;
+import com.sdm.surveydatamanagementapi.exception.question.NotAllQuestionsSavedException;
+import com.sdm.surveydatamanagementapi.exception.question.QuestionNotFoundException;
+import com.sdm.surveydatamanagementapi.exception.survey.NoSurveysException;
+import com.sdm.surveydatamanagementapi.exception.survey.SurveyAlreadyTakenException;
+import com.sdm.surveydatamanagementapi.exception.survey.SurveyNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -186,6 +187,8 @@ public class GlobalExceptionHandler {
                         .build());
     }
 
+    @ExceptionHandler(QuestionNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public ResponseEntity<ErrorResponse> handleQuestionNotFoundException(QuestionNotFoundException e, WebRequest request) {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
@@ -198,6 +201,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponse> handleValidationExceptions(MethodArgumentNotValidException e, WebRequest request){
         Map<String, String> errors = new HashMap<>();
         e.getBindingResult().getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));

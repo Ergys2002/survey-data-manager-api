@@ -1,6 +1,6 @@
 package com.sdm.surveydatamanagementapi.dto.response;
 
-import com.example.surveydatamanager.constant.PossibleAnswer;
+import com.sdm.surveydatamanagementapi.constant.PossibleAnswer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

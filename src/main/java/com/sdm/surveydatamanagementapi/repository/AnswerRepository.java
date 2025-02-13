@@ -1,6 +1,6 @@
 package com.sdm.surveydatamanagementapi.repository;
 
-import com.example.surveydatamanager.entity.Answer;
+import com.sdm.surveydatamanagementapi.entity.Answer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,13 +1,13 @@
 package com.sdm.surveydatamanagementapi.service.classes;
 
-import com.example.surveydatamanager.dto.response.QuestionResponse;
-import com.example.surveydatamanager.entity.Question;
-import com.example.surveydatamanager.entity.Survey;
-import com.example.surveydatamanager.exception.question.NoQuestionsForSurveyException;
-import com.example.surveydatamanager.exception.survey.SurveyNotFoundException;
-import com.example.surveydatamanager.repository.QuestionRepository;
-import com.example.surveydatamanager.repository.SurveyRepository;
-import com.example.surveydatamanager.service.interfaces.IQuestionService;
+import com.sdm.surveydatamanagementapi.dto.response.QuestionResponse;
+import com.sdm.surveydatamanagementapi.entity.Question;
+import com.sdm.surveydatamanagementapi.entity.Survey;
+import com.sdm.surveydatamanagementapi.exception.question.NoQuestionsForSurveyException;
+import com.sdm.surveydatamanagementapi.exception.survey.SurveyNotFoundException;
+import com.sdm.surveydatamanagementapi.repository.QuestionRepository;
+import com.sdm.surveydatamanagementapi.repository.SurveyRepository;
+import com.sdm.surveydatamanagementapi.service.interfaces.IQuestionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

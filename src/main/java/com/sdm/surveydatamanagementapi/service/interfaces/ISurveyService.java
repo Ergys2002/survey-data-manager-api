@@ -1,6 +1,6 @@
 package com.sdm.surveydatamanagementapi.service.interfaces;
 
-import com.example.surveydatamanager.dto.request.SurveyCreateRequest;
+import com.sdm.surveydatamanagementapi.dto.request.SurveyCreateRequest;
 import org.springframework.http.ResponseEntity;
 
 public interface ISurveyService {

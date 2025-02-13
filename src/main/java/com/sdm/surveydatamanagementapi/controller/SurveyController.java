@@ -1,7 +1,7 @@
 package com.sdm.surveydatamanagementapi.controller;
 
-import com.example.surveydatamanager.dto.request.SurveyCreateRequest;
-import com.example.surveydatamanager.service.interfaces.ISurveyService;
+import com.sdm.surveydatamanagementapi.dto.request.SurveyCreateRequest;
+import com.sdm.surveydatamanagementapi.service.interfaces.ISurveyService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
